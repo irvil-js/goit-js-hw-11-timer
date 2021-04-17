@@ -35,13 +35,19 @@ class CountdownTimer {
     
     const secs = this.pad(Math.floor((deltaTime % (1000 * 60)) / 1000));
     
+           
+      this.updateClockface (days, hours, mins, secs);
+    }
+    
+  updateClockface(days, hours, mins, secs) {
     //  refs.days.textContent = `${days}`;
     // refs.hours.textContent = `${hours}`;
     // refs.mins.textContent = `${mins}`;
     //     refs.secs.textContent = `${secs}`;
-        refs.timer.textContent = `${days} days : ${hours} hours : ${mins} mins : ${secs}secs`;
-    }
-    
+            refs.timer.textContent = `${days} days : ${hours} hours : ${mins} mins : ${secs}secs`;
+
+  }
+  
 
     pad(value) {
     return String(value).padStart(2, '0');    
